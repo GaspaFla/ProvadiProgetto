@@ -1,0 +1,36 @@
+@startuml
+' Questo è un commento
+package GeometryLibrary<<Folder>>{
+' il tipo intorno a cui voglio visualizzarlo
+class vettore 
+
+{
++ vertices :Matrix3d
++ Triangle(Vertices) 
+'costruttore
++ double computeArea() 
+'calcola l'area
+}
+
+class Polygons
+{
++ Vertices: MatrixXd
++ listPolygons : vector<vector<unsigned int>>
++ v<v<v< unsigned int>>> computeTriangles()
++ vector<double> computeArea()
++ void gedimInterface(v<v<unsigned int>>&)
+}
+
+}
+
+
+package Gedim <<Frame>>
+{
+}
+note "Gedim is an external library" as GedimN
+' crea una nota
+GedimN..Gedim
+Gedim..>Polygons::gedimInterface
+'sto creando una freccia
+Triangle "molti" ..o "1"  Polygons : is made up
+@enduml
